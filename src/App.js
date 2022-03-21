@@ -5,13 +5,11 @@ class App extends React.Component {
   constructor() {
     super();
 
+    let randomNumber = Math.floor(Math.random() * 11) + 1;
     this.state = {
-      quotes: '',
-      author: '',
+      quotes: QUOTES[randomNumber].quote,
+      author: QUOTES[randomNumber].author,
     };
-
-    let no = GetRandomQuotes();
-    this.setState({ quotes: QUOTES[no].quote, author: QUOTES[no].author });
   }
 
   handleClick() {
