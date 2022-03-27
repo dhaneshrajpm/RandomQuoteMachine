@@ -19,16 +19,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="wrapper">
-        <div id="quote-box">
-          <div id="text">{this.state.quotes}</div>
-          <div id="author">{'-' + this.state.author}</div>
-          <div id="new-quote">
-            <button className="btn" onClick={this.handleClick.bind(this)}>
-              New Quote
-            </button>
+      <div id="wrapper" className="container">
+        <div id="quote-box" className="quote-box">
+          <div id="text" className="text">
+            {this.state.quotes}
           </div>
-          <a id="tweet-quote"></a>
+          <div id="author" className="author">
+            {'-' + this.state.author}
+          </div>
+          <div id="new-quote" className="btn">
+            <a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank">
+              Tweet
+            </a>
+            <button onClick={this.handleClick.bind(this)}>New Quote</button>
+          </div>
         </div>
       </div>
     );
